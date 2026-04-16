@@ -11,42 +11,36 @@ export default function Home() {
       <Nav />
 
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="max-w-[1680px] mx-auto px-12 min-h-[calc(100vh-4rem)] flex flex-col py-12">
+      <section className="px-5 sm:px-12 min-h-[calc(100vh-4rem)] flex flex-col py-10 sm:py-12">
 
-        {/* Bottom: photo + text left — social right */}
-        <div className="flex-1 flex flex-col justify-end">
-          <div className="flex items-end justify-between gap-8">
+        <div className="flex-1 flex flex-col justify-end gap-8">
 
-            {/* Photo + bio — bottom-left */}
-            <div className="flex flex-col gap-6">
-              <AnimateIn delay={0.15} blur>
-                <div
-                  className="relative overflow-hidden rounded-xl shrink-0 aspect-[4/3]"
-                  style={{ width: "550px" }}
-                >
-                  <Image
-                    src="/albin-johansson.webp"
-                    alt="Albin Johansson"
-                    fill
-                    className="object-cover object-top grayscale"
-                    priority
-                  />
-                </div>
-              </AnimateIn>
-
-              <AnimateIn delay={0.2}>
-                <p
-                  className="font-[500] leading-[1.35] tracking-[-0.02em] max-w-[600px]"
-                  style={{ fontSize: "24px" }}
-                >
-                  <span className="text-white">Product Designer from Karlstad, Sweden. I like the space between design and </span>
-                  <span style={{ color: "#9E9E9E" }}>code, understanding both sides makes better products.</span>
-                </p>
-              </AnimateIn>
+          {/* Photo */}
+          <AnimateIn delay={0.15} blur>
+            <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-full sm:w-[550px]">
+              <Image
+                src="/albin-johansson.webp"
+                alt="Albin Johansson"
+                fill
+                className="object-cover object-top grayscale"
+                priority
+              />
             </div>
+          </AnimateIn>
 
-            {/* Social links — bottom-right */}
-            <AnimateIn delay={0.25} className="flex flex-row gap-2.5 items-end pb-1 shrink-0">
+          {/* Bio + social — side by side on desktop, stacked on mobile */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+            <AnimateIn delay={0.2}>
+              <p
+                className="font-[500] leading-[1.35] tracking-[-0.02em] max-w-[600px]"
+                style={{ fontSize: "clamp(18px, 2.5vw, 24px)" }}
+              >
+                <span className="text-white">Product Designer from Karlstad, Sweden. I like the space between design and </span>
+                <span style={{ color: "#9E9E9E" }}>code, understanding both sides makes better products.</span>
+              </p>
+            </AnimateIn>
+
+            <AnimateIn delay={0.25} className="flex flex-row gap-2.5 shrink-0">
               <a
                 href="mailto:albinjhnssn@outlook.com"
                 className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.07] backdrop-blur-sm border border-white/[0.1] text-sm font-[600] text-white/50 hover:text-white hover:bg-white/[0.12] transition-all"
@@ -62,20 +56,20 @@ export default function Home() {
                 LinkedIn <span className="text-white/25">↗</span>
               </a>
             </AnimateIn>
-
           </div>
+
         </div>
       </section>
 
       {/* ── Work ─────────────────────────────────────────── */}
-      <section id="work" className="max-w-[1680px] mx-auto px-12 py-24">
+      <section id="work" className="px-5 sm:px-12 py-16 sm:py-24">
         <AnimateIn>
-          <h2 className="text-2xl font-[500] tracking-[-0.025em] text-white mb-12">
+          <h2 className="text-2xl font-[500] tracking-[-0.025em] text-white mb-10 sm:mb-12">
             Selected work
           </h2>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
           ))}
@@ -83,9 +77,9 @@ export default function Home() {
       </section>
 
       {/* ── About ────────────────────────────────────────── */}
-      <section id="about" className="max-w-[1680px] mx-auto px-12 py-24">
+      <section id="about" className="px-5 sm:px-12 py-16 sm:py-24">
         <AnimateIn>
-          <h2 className="text-2xl font-[500] tracking-[-0.025em] text-white mb-8">
+          <h2 className="text-2xl font-[500] tracking-[-0.025em] text-white mb-6 sm:mb-8">
             A little about me
           </h2>
         </AnimateIn>
@@ -109,9 +103,9 @@ export default function Home() {
       </section>
 
       {/* ── Contact ──────────────────────────────────────── */}
-      <section id="contact" className="max-w-[1680px] mx-auto px-12 py-24">
+      <section id="contact" className="px-5 sm:px-12 py-16 sm:py-24">
         <AnimateIn>
-          <h2 className="text-2xl font-[500] tracking-[-0.025em] text-white mb-8">
+          <h2 className="text-2xl font-[500] tracking-[-0.025em] text-white mb-6 sm:mb-8">
             Get in touch
           </h2>
         </AnimateIn>
@@ -138,7 +132,7 @@ export default function Home() {
 
       {/* ── Footer ───────────────────────────────────────── */}
       <footer>
-        <div className="max-w-[1680px] mx-auto px-12 py-8 flex flex-wrap justify-between items-center gap-4">
+        <div className="px-5 sm:px-12 py-8 flex flex-wrap justify-between items-center gap-4">
           <span className="text-sm text-white/30">© {new Date().getFullYear()} Albin Johansson</span>
           <span className="text-sm text-white/30">Karlstad, Sweden</span>
         </div>

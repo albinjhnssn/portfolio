@@ -13,7 +13,7 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0D0D0D]/75 backdrop-blur-xl">
-      <div className="max-w-[1680px] mx-auto px-12 h-16 flex items-center justify-between">
+      <div className="px-5 sm:px-12 h-16 flex items-center justify-between">
         <a
           href="/"
           className="flex items-center gap-2.5 font-[700] text-white hover:text-white/60 transition-colors tracking-[-0.02em] text-[0.9375rem]"
@@ -50,7 +50,7 @@ export function Nav() {
 
       {menuOpen && (
         <div className="md:hidden border-t border-white/[0.07] bg-[#0D0D0D]/90 backdrop-blur-xl">
-          <nav className="max-w-[1680px] mx-auto px-12 py-5 flex flex-col gap-5">
+          <nav className="px-5 sm:px-12 py-5 flex flex-col gap-5">
             {links.map(({ label, href }, i) => (
               <motion.a
                 key={label}

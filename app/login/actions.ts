@@ -1,3 +1,6 @@
+// Password protection is currently disabled.
+// To re-enable: add a middleware.ts at the project root that checks the "auth" cookie
+// and redirects unauthenticated requests to /login.
 "use server";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
